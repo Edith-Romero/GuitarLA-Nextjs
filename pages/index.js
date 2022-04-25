@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Link from 'next/dist/client/link'
 import Layaout from './components/Layaout'
 
 export default function Home() {
