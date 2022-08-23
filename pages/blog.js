@@ -4,6 +4,7 @@ import styles from '../styles/Blog.module.css'
 
 
 const Blog = ({entradas}) => {
+
   return (
     <Layaout
         pagina='blog'
