@@ -6,11 +6,8 @@ import styles from "../../styles/Entrada.module.css"
 
 const EntradaBlog = ({entrada}) => {
 
-  console.log("ENTRADA 2", entrada)
-
-    const {titulo,publishedAt, contenido, imagen, url} = entrada.data[0].attributes;
-
-    const {name} = imagen.data.attributes;
+  const {titulo,publishedAt, contenido, imagen, url} = entrada.data[0].attributes;
+  const {name} = imagen.data.attributes;
 
   return (
     <Layaout
@@ -42,8 +39,6 @@ export async function getStaticPaths() {
         params:{ url: entrada.attributes.url}
     }))
 
-    console.log("PATH", paths);
-
     return{
         paths,
         fallback:false //fallback: es una llave false: Es cuando tienes pocas rutas y sabes cuales se van a construir, true:trae una serie de ruta estaticamentes, next.js van a generarse cuando sean solicitadas
@@ -58,12 +53,10 @@ export async function getStaticProps({params}) {
     
     const {url} = params
 
-    const urlBlog = `http://localhost:1337/api/blogs?filters[url][$eq]=${url}&populate=*`
+    const urlBlog = `${process.env.API_URL}/api/blogs?filters[url][$eq]=${url}&populate=*`
     const respuesta= await fetch(urlBlog)
     const entrada = await respuesta.json()
-
-    console.log("ENTRADA 1", entrada)
-  
+   
     return{
       props:{
         entrada

@@ -1,25 +1,17 @@
-import Entrada from '../components/Entrada'
-import Layaout from '../components/Layaout'
-import styles from '../styles/Blog.module.css'
+import Layaout from "../components/Layaout"
+import ListadoBlog from "../components/ListadoBlog"
 
 
 const Blog = ({entradas}) => {
 
   return (
     <Layaout
-        pagina='blog'
+      pagina='blog'
     >
       <main className='contenedor'>
-        <h2 className='heading'>Blog</h2>
-
-        <div className={styles.blog}>
-          {entradas.data.map(entrada =>(
-            <Entrada
-              key ={entrada.id}
-              entrada = {entrada}
-            />
-          ))}
-        </div>
+        <ListadoBlog
+          entradas={entradas}
+        />
       </main>
     </Layaout>
   )

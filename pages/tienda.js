@@ -16,7 +16,6 @@ const Tienda = ({guitarras}) => {
             <Listado
               guitarras = { guitarras } 
             />
-
         </main>
     </Layaout>
   )

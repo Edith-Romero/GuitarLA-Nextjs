@@ -8,13 +8,6 @@ const Entrada = ({entrada}) => {
   const {titulo,resumen,publishedAt,url} = entrada.attributes
   const {name} = entrada.attributes.imagen.data.attributes
 
-  // console.log(entrada.attributes);
-  // console.log(entrada.attributes.imagen);
-  // console.log(entrada.attributes.imagen.data.attributes);
-  // console.log(entrada.attributes.imagen.data.attributes.name);
-  
-
-
   return (
     <article>
       <Image layaout = 'responsive' width = {800} height= {600} src={name} alt={`imagen block ${titulo}`}/>

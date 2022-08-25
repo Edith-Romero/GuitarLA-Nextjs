@@ -4,8 +4,8 @@ import styles from '../../styles/Guitarra.module.css'
 
 const  Producto = ({guitarra}) => {
 
-    console.log("desde props", guitarra
-    );
+    // console.log("desde props", guitarra
+    // );
 
     const {descripcion,imagen,nombre,precio,}= guitarra.data[0].attributes
     const {name} = imagen.data.attributes
@@ -20,6 +20,30 @@ const  Producto = ({guitarra}) => {
                 <h3>{nombre}</h3>
                 <p className={styles.descripcion}>{descripcion}</p>
                 <p className={styles.precio}>${precio}</p>
+
+                <form className={styles.formulario}>
+                    <label>Cantidad: </label>
+
+                    <select>
+                        <option value="">-- Seleccione --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>     
+                    <input
+                        type="submit"
+                        value="Agregar al carrito"
+                    />           
+                </form>
             </div>
         </div>        
     </Layaout>
