@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from './Footer'
 import Header from './Header'
 
-const Layaout = ({children, pagina,guitarras}) => {
+const Layout = ({children, pagina,guitarras}) => {
   return (
     <div>
         <Head>
@@ -19,8 +19,8 @@ const Layaout = ({children, pagina,guitarras}) => {
 }
 
 // Esto se hace porque en nostros tambien usamos guitarras y salta undefine por ende pasamos su valor a null para cuando no este sea pro default
-Layaout.defauldProps = {
+Layout.defauldProps = {
   guitarra: null
 }
 
-export default Layaout
+export default Layout

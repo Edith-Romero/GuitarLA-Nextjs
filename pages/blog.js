@@ -1,11 +1,11 @@
-import Layaout from "../components/Layaout"
+import Layout from "../components/Layout"
 import ListadoBlog from "../components/ListadoBlog"
 
 
 const Blog = ({entradas}) => {
 
   return (
-    <Layaout
+    <Layout
       pagina='blog'
     >
       <main className='contenedor'>
@@ -13,7 +13,7 @@ const Blog = ({entradas}) => {
           entradas={entradas}
         />
       </main>
-    </Layaout>
+    </Layout>
   )
 }
 

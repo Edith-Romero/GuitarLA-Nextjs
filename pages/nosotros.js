@@ -1,9 +1,9 @@
-import Layaout from '../components/Layaout'
+import Layout from '../components/Layout'
 import Image from 'next/image'
 
 const Nosotros = () => {
   return (
-    <Layaout
+    <Layout
         pagina='Nosotros'
     >
         <main className="contenedor"> 
@@ -38,7 +38,7 @@ const Nosotros = () => {
               </div>
             </div>
         </main>
-    </Layaout>
+    </Layout>
   )
 }
 

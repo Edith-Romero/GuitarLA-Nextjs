@@ -1,4 +1,4 @@
-import Layaout from '../components/Layaout'
+import Layout from '../components/Layout'
 import Listado from '../components/Listado';
 
 
@@ -7,7 +7,7 @@ const Tienda = ({guitarras}) => {
   // console.log("Guitarras", guitarras);
 
   return (
-    <Layaout
+    <Layout
         pagina='tienda'
     >
         <main className='contenedor'>
@@ -17,7 +17,7 @@ const Tienda = ({guitarras}) => {
               guitarras = { guitarras } 
             />
         </main>
-    </Layaout>
+    </Layout>
   )
 }
 

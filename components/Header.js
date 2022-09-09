@@ -28,6 +28,12 @@ const Header = ({guitarras}) => {
                   <Link href="/nosotros">Nosotros</Link>
                   <Link href="/blog">Blog</Link>
                   <Link href="/tienda">Tienda</Link>
+                  <Link href="/carrito">
+                    <a>
+                      <Image layout='fixed' width={35} height={30} src = "/img/carrito.png" alt="imagen carrito"
+                      />
+                    </a>
+                  </Link>
               </nav>
           </div>
             {guitarras && (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Layaout from "../../components/Layaout"
+import Layout from "../../components/Layout"
 import Image from "next/image"
 import { formatearFecha } from "../../helpers"
 import styles from "../../styles/Entrada.module.css"
@@ -10,7 +10,7 @@ const EntradaBlog = ({entrada}) => {
   const {name} = imagen.data.attributes;
 
   return (
-    <Layaout
+    <Layout
       pagina={titulo}
     >
         <main className='contenedor'>
@@ -23,7 +23,7 @@ const EntradaBlog = ({entrada}) => {
                 </div>
             </article>
         </main>
-    </Layaout>
+    </Layout>
     
   )
 }

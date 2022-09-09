@@ -1,17 +1,40 @@
+import {useState} from 'react'
 import Image from 'next/image'
-import Layaout from '../../components/Layaout'
+import Layout from '../../components/Layout'
 import styles from '../../styles/Guitarra.module.css'
 
-const  Producto = ({guitarra}) => {
+const  Producto = ({guitarra,agregarCarrito}) => {
 
-    // console.log("desde props", guitarra
-    // );
-
-    const {descripcion,imagen,nombre,precio,}= guitarra.data[0].attributes
+    const {descripcion,imagen,nombre,precio}= guitarra.data[0].attributes
+    const{id} = guitarra.data[0]
     const {name} = imagen.data.attributes
+    const[cantidad,setCantidad] = useState(1);
+
+    // console.log(guitarra.data[0].attributes);
+    // console.log(guitarra.data[0]);
+    console.log(name);
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        if(cantidad <1){
+            alert("Cantidad no valida");
+            return;
+        }
+
+        //Agregar al carrito un producto
+        const guitarraSeleccionada = {
+            id,
+            imagen: name,
+            nombre,
+            precio,
+            cantidad,
+        };
+        // console.log(guitarraSeleccionada);
+        agregarCarrito(guitarraSeleccionada)
+    }
 
   return (
-    <Layaout
+    <Layout
         pagina={`Guitarra ${nombre}`}
     >
         <div className={styles.guitarra}>
@@ -21,11 +44,14 @@ const  Producto = ({guitarra}) => {
                 <p className={styles.descripcion}>{descripcion}</p>
                 <p className={styles.precio}>${precio}</p>
 
-                <form className={styles.formulario}>
+                <form className={styles.formulario} onSubmit={handleSubmit}>
                     <label>Cantidad: </label>
 
-                    <select>
-                        <option value="">-- Seleccione --</option>
+                    <select
+                        value={cantidad}
+                        onChange={e=> setCantidad(parseInt(e.target.value))}
+                    >
+                        <option value="0">-- Seleccione --</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -46,7 +72,7 @@ const  Producto = ({guitarra}) => {
                 </form>
             </div>
         </div>        
-    </Layaout>
+    </Layout>
   )
 }
 

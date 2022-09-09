@@ -1,5 +1,5 @@
 import Cursos from '../components/Cursos'
-import Layaout from '../components/Layaout'
+import Layout from '../components/Layout'
 import Listado from '../components/Listado'
 import ListadoBlog from '../components/ListadoBlog'
 
@@ -9,7 +9,7 @@ export default function Home({guitarras,cursos, entradas}) {
   
   return (
     // le enviamos la prop de pagina para que me muestre la pagina en la que nos encontramos
-    <Layaout
+    <Layout
       pagina = 'Inicio'
       guitarras = {guitarras.data[3]}
     >
@@ -31,7 +31,7 @@ export default function Home({guitarras,cursos, entradas}) {
         />
       </section>
 
-    </Layaout>
+    </Layout>
   )
 }
 export async function getServerSideProps(){
